@@ -7,10 +7,12 @@ from taxon_names_resolver import Resolver
 from django.core.exceptions import ObjectDoesNotExist
 from django.db import IntegrityError
 
+from .forms import TaxonForm
+
 def show_taxa(request):
     return render(request, "taxa.html", {'nodes':Taxon.objects.all()})
 
-def add_taxon(taxon):
+def add_taxonx(taxon):
     try:
         Taxon.objects.get(name=taxon)
         return(taxon+' is already in local database.')
@@ -34,7 +36,9 @@ def add_taxon(taxon):
                 Taxon.objects.create(name=taxon_list[i], rank=rank_list[i], parent=node)
     return(taxon_list, rank_list)
 
-def add_taxon2(taxon):
+def add_taxon2(request):
+    taxon = request.POST['taxon']
+
     try:
         resolver = Resolver(terms=[taxon])
         resolver.main()
@@ -62,3 +66,7 @@ def add_taxon2(taxon):
                 node = Taxon.objects.get(name=taxon_list[i])
                 print(taxon_list[i]+' not added to local database; already there.')
                 pass
+    return(render(request, "taxonform.html"))
+
+def add_taxon(request):
+    return(render(request, "taxonform.html"))
