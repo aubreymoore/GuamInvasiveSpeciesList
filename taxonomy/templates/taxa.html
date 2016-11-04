@@ -15,11 +15,14 @@
 
 <h1>tree</h1>
 
+<input type="button" value="Expand All" onclick="$('#tree').jstree('open_all');">
+<input type="button" value="Collapse All" onclick="$('#tree').jstree('close_all');">
+
 <div id="tree">
   <ul>
       {% recursetree nodes %}
           <li>
-              {{ node.name }}
+              {{ node.rank }} <b>{{ node.name}}</b>
               {% if not node.is_leaf_node %}
                   <ul class="children">
                       {{ children }}
