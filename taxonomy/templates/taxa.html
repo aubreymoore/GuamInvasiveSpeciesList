@@ -9,6 +9,12 @@
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/themes/default/style.min.css" />
+  <style>
+    h1 {color:red;}
+    .genus {font-style:italic}
+    .species {font-style:italic}
+  </style>
+</head>
 </head>
 
 <body>
@@ -22,7 +28,7 @@
   <ul>
       {% recursetree nodes %}
           <li>
-              {{ node.rank }} <b>{{ node.name}}</b>
+              {{ node.rank }} <b><span class="{{node.rank}}">{{ node.name}}</span></b>
               {% if not node.is_leaf_node %}
                   <ul class="children">
                       {{ children }}
