@@ -1,0 +1,25 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html lang="en">
+<head>
+    <title>My Home Page</title>
+	<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/style.css" media="screen" />
+</head>
+<body>
+<h1>Guam Biodiversity Inventory</h1>
+<p>Static URL: {{ STATIC_URL }}</p>
+
+<h2>Taxonomy</h2>
+<ul>
+  <li><a href="taxonomy/show">Show tree</a></li>
+  <li><a href="taxonomy/add">Add Taxon</a></li>
+  <li><a href="admin/taxonomy/taxon">Manage Taxonomy (Admin)</a></li>
+</ul>
+
+<h2>Publications</h2>
+<ul>
+  <li><a href="publications">Show list</a></li>
+  <li><a href="admin/publications/publication">Manage Publications (Admin)</a></li>
+</ul>
+
+</body>
+</html>
