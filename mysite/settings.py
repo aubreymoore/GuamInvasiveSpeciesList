@@ -31,6 +31,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'newislandrecords',
+    'locations',
     'home',
     'mptt',
     'taxonomy',

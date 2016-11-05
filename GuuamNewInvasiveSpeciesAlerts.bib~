@@ -1,0 +1,107 @@
+
+@article{moore_brown_2014,
+	series = {Guam {New} {Invasive} {Species} {Alerts}},
+	title = {Brown marmorated stink bug, {Halymorpha} halys},
+	url = {http://guaminsects.net/anr/sites/default/files/brownMarmoratedStinkBug.pdf},
+	number = {2014-1},
+	author = {Moore, Aubrey},
+	year = {2014},
+	keywords = {cfes2015, gisa}
+}
+
+@article{moore_camphor_2014,
+	series = {Guam {New} {Invasive} {Species} {Alerts}},
+	title = {Camphor scale, {Pseudaonidia} duplex},
+	url = {http://guaminsects.net/anr/sites/default/files/camphorscale2.pdf},
+	number = {2014-5},
+	author = {Moore, Aubrey and McConnell, James and Watson, Gillian},
+	year = {2014},
+	keywords = {cfes2015, gisa}
+}
+
+@article{route_castor_2014,
+	series = {Guam {New} {Invasive} {Species} {Alerts}},
+	title = {Castor hairy caterpillar, {Olepa} ricini},
+	url = {http://guaminsects.net/anr/sites/default/files/castor%20hairy%20caterpillar_0.pdf},
+	number = {2014-3},
+	author = {Route, Arnold and Moore, Aubrey},
+	year = {2014},
+	keywords = {cfes2015, gisa}
+}
+
+@article{mcconnell_crambid_2015,
+	series = {Guam {New} {Invasive} {Species} {Alerts}},
+	title = {Crambid moth, {Cydalima} laticostalis},
+	url = {http://guaminsects.net/anr/sites/default/files/cydalima-laticostalis(1)_0.pdf},
+	number = {2015-1},
+	author = {McConnell, James and Moore, Aubrey},
+	year = {2015},
+	keywords = {cfes2015, gisa}
+}
+
+@article{moore_eggplant_2013,
+	series = {Guam {New} {Invasive} {Species} {Alerts}},
+	title = {Eggplant mealybug, {Cocoidohystrix} insolita},
+	url = {http://guaminsects.net/anr/sites/default/files/eggplantMealybug.pdf},
+	number = {2013-1},
+	author = {Moore, Aubrey and Bamba, Jesse},
+	year = {2013}
+}
+
+@misc{aubrey_moore_guam_????,
+	title = {Guam {New} {Invasive} {Species} {Alerts}},
+	url = {http://cnas-re.uog.edu/guam-new-invasive-species-alerts/},
+	urldate = {2016-07-28},
+	author = {{Aubrey Moore}}
+}
+
+@article{moore_ixora_2014,
+	series = {Guam {New} {Invasive} {Species} {Alerts}},
+	title = {Ixora leaf-mining weevil},
+	url = {http://guaminsects.net/anr/sites/default/files/ixora-leafmining-weevil.pdf},
+	number = {2014-6},
+	author = {Moore, Aubrey},
+	year = {2014},
+	keywords = {cfes2015, gisa}
+}
+
+@article{moore_leaf_2014,
+	series = {Guam {New} {Invasive} {Species} {Alerts}},
+	title = {Leaf beetle, {Calligrapha} californica},
+	url = {http://guaminsects.net/anr/sites/default/files/calligrapha-californica(2).pdf},
+	number = {2014-8},
+	author = {Moore, Aubrey},
+	year = {2014},
+	keywords = {cfes2015, gisa},
+	file = {CFES2015_news_articles.pdf:/home/aubreymoore/.zotero/zotero/uqtovekj.default/zotero/storage/D3JFKTRS/CFES2015_news_articles.pdf:application/pdf}
+}
+
+@article{moore_spotted_2014,
+	series = {Guam {New} {Invasive} {Species} {Alerts}},
+	title = {Spotted cucumber beetle (southern corn rootworm), {Diabrotica} undecimpunctata},
+	url = {http://guaminsects.net/anr/sites/default/files/spotted%20cucumber%20beetle.pdf},
+	number = {2014-2},
+	author = {Moore, Aubrey},
+	year = {2014},
+	keywords = {cfes2015, gisa}
+}
+
+@article{moore_unidentified_2014,
+	series = {Guam {New} {Invasive} {Species} {Alerts}},
+	title = {Unidentified roach},
+	url = {http://guaminsects.net/anr/sites/default/files/newpestroach.pdf},
+	number = {2014-07},
+	author = {Moore, Aubrey},
+	year = {2014},
+	keywords = {cfes2015, gisa}
+}
+
+@article{rosario_varroa_2014,
+	series = {Guam {New} {Invasive} {Species} {Alerts}},
+	title = {Varroa mite, {Varroa} destructor},
+	url = {http://guaminsects.net/anr/sites/default/files/varroa mite.pdf},
+	number = {2014-04},
+	author = {Rosario, Christopher A. and Miller, Ross H. and Moore, Aubrey},
+	year = {2014},
+	keywords = {cfes2015, gisa, Invasive species}
+}
