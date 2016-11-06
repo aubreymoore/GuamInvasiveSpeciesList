@@ -1,5 +1,4 @@
 from django.db import models
-from django.utils.timezone import now
 
 class NewIslandRecord(models.Model):
     taxon = models.ForeignKey('taxonomy.Taxon')
@@ -9,6 +8,12 @@ class NewIslandRecord(models.Model):
     invasive_species = models.NullBooleanField()
     established = models.NullBooleanField()
     quarantine_interception = models.NullBooleanField()
+
+    # Metadata
+    created = models.DateField(null=True)
+    created_by = models.CharField(max_length=30, null=True)
+    update_by = models.CharField(max_length=30, null=True, blank=True)
+    updated = models.DateField(null=True, blank=True)
 
     def __str__(self):
         return('{} {}'.format(self.taxon, self.year_detected))
