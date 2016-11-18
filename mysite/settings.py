@@ -26,6 +26,7 @@ SECRET_KEY = '$^mq_j^&0s36!pawaffmoy0t50^ngd@acn#7=13k!yo7c0i*xd'
 DEBUG = True
 
 ALLOWED_HOSTS = [
+    '127.0.0.1',
     'aubreymoore.pythonanywhere.com',
     ]
 
@@ -40,7 +41,7 @@ INSTALLED_APPS = [
     'taxonomy',
     'publications',
     'django_extensions',
-    'polls.apps.PollsConfig',
+#    'polls.apps.PollsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -129,3 +130,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
 STATIC_URL = '/static/'
+
+MPTT_ADMIN_LEVEL_INDENT = 20

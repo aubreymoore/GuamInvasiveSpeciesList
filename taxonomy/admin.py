@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Genre, Taxon
+from mptt.admin import MPTTModelAdmin
+from .models import Taxon
 
-admin.site.register(Genre)
-admin.site.register(Taxon)
+admin.site.register(Taxon, MPTTModelAdmin)

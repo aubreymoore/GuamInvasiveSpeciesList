@@ -21,6 +21,5 @@ urlpatterns = [
     url(r'^$', index, name='index'),
     url(r'^taxonomy/', include('taxonomy.urls')),
     url(r'^publications/', include('publications.urls')),
-    url(r'^polls/', include('polls.urls')),
     url(r'^admin/', admin.site.urls),
 ]
