@@ -4,6 +4,9 @@
 
 <form action="{% url 'taxonomy:addtaxon' %}" method="post">
   {% csrf_token %}
-  <input type="text" name="taxon" id="taxon" value="taxon" />
+  Taxon name:
+  <input type="text" name="taxon" id="taxon"/>
   <input type="submit" value="submit" />
 </form>
+
+<a href="/">Return to Home Page</a>
