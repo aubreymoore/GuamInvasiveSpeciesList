@@ -1,12 +1,17 @@
+{% load staticfiles %}
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
 <html lang="en">
 <head>
-    <title>My Home Page</title>
+  <title>Guam Biodiversity Inventory</title>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
 	<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/style.css" media="screen" />
+  <link rel="stylesheet" href="{% static 'css/home.css' %}">
 </head>
 <body>
-<h1>Guam Biodiversity Inventory</h1>
-<p>Static URL: {{ STATIC_URL }}</p>
+  <div class="jumbotron">
+    <h1>Guam Biodiversity Inventory</h1>
+  </div>
 
 <h2>Taxonomy</h2>
 <ul>
