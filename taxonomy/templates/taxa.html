@@ -6,20 +6,22 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/themes/default/style.min.css" />
   <style>
-    h1 {color:red;}
     .genus {font-style:italic}
     .species {font-style:italic}
+    body {
+    		margin-right: 10%;
+    		margin-left: 10%;
+    	}
   </style>
-</head>
 </head>
 
 <body>
 
-<h1>tree</h1>
+<h1>Taxonomic tree</h1>
 
 <input type="button" value="Expand All" onclick="$('#tree').jstree('open_all');">
 <input type="button" value="Collapse All" onclick="$('#tree').jstree('close_all');">
