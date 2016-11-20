@@ -11,8 +11,27 @@ from .forms import TaxonForm
 
 from .ncbi import Taxon_resolver
 
+from django.core.exceptions import ObjectDoesNotExist
+from django.core.exceptions import MultipleObjectsReturned
+
+
 def show_taxa(request):
-    return render(request, "taxa.html", {'nodes':Taxon.objects.all()})
+    nodes = None
+    error_msg = None
+    taxon = 'root'
+    if request.GET.get('taxon'):
+        taxon = request.GET.get('taxon')
+        try:
+            node = Taxon.objects.get(name__istartswith=taxon)
+        except MultipleObjectsReturned:
+            error_msg = 'A search for "{}" returned multiple taxa.'.format(taxon)
+            return render(request, "taxa.html", {'taxon':taxon, 'error_msg':error_msg,'nodes':nodes})
+        except ObjectDoesNotExist:
+            error_msg = 'A search for "{}" did not find any matches.'.format(taxon)
+            return render(request, "taxa.html", {'taxon':taxon, 'error_msg':error_msg,'nodes':nodes})
+
+        nodes = node.get_descendants(include_self=True)
+    return render(request, "taxa.html", {'taxon':taxon, 'error_msg':error_msg, 'nodes':nodes})
 
 def add_taxon(request):
     taxon = request.POST['taxon']
