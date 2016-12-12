@@ -13,6 +13,17 @@ from .forms import TaxonForm
 from django.core.exceptions import ObjectDoesNotExist
 from django.core.exceptions import MultipleObjectsReturned
 import requests
+import logging
+
+stdlogger = logging.getLogger(__name__)
+
+def myfunction():
+    stdlogger.debug("this is a debug message!")
+
+def myotherfunction():
+    stdlogger.error("this is an error message!!")
+
+
 
 
 def show_taxa(request):
@@ -53,25 +64,24 @@ def check_db_for_taxon(taxon):
         node = None
     return(node)
 
-def add_taxon(request):
-    result_list = []
-    taxon = request.POST['taxon']
+def doit(taxon):
+    stdlogger.debug("Entering doit with taxon = '{}'".format(taxon))
 
     # If taxon is already in db; return early.
     if check_db_for_taxon(taxon):
-        result_list.append('{} already in db.'.format(taxon))
-        return render(request, "results.html", {'result_list': result_list})
+        stdlogger.debug('{} already in db.'.format(taxon))
+        return([])
 
     # Attempt to match taxon using the GBIF Species API
     res = match_name(taxon)
 
     # Extract some key items for the user
     if 'note' in res:
-        result_list.append('note: {}'.format(res['note']))
+        stdlogger.debug('note: {}'.format(res['note']))
     if 'matchType' in res:
-        result_list.append('matchType: {}'.format(res['matchType']))
+        stdlogger.debug('matchType: {}'.format(res['matchType']))
     if 'status' in res:
-        result_list.append('status: {}'.format(res['status']))
+        stdlogger.debug('status: {}'.format(res['status']))
 
     name_resolved = (
         'matchType' in res and
@@ -81,15 +91,15 @@ def add_taxon(request):
         )
 
     if name_resolved:
-        result_list.append('Name resolved.')
-        result_list.append('')
+        stdlogger.debug('Name resolved.')
+        stdlogger.debug('')
 
         # Build hierarchy
         taxon_list = []
-        for rank in ['kingdom', 'phylum', 'class', 'family', 'genus', 'species']:
+        for rank in ['kingdom', 'phylum', 'class', 'order', 'family', 'genus', 'species']:
             if rank in res:
                 taxon_list.append({rank: res[rank]})
-        print(taxon_list)
+        stdlogger.debug(taxon_list)
 
         try:
             node = Taxon.objects.get(name='root')
@@ -100,17 +110,25 @@ def add_taxon(request):
             for rank, name in taxon.items():
                 try:
                     node = Taxon.objects.create(name=name, rank=rank, parent=node)
-                    result_list.append('{} {} added to local database.'.format(rank, name))
+                    stdlogger.debug('{} {} added to local database.'.format(rank, name))
                 except IntegrityError:
-                    node = Taxon.objects.get(name=taxon)
-                    result_list.append('{} {} not added to local database; already there.'.format(rank, name))
+                    node = Taxon.objects.get(name=name)
+                    stdlogger.debug('{} {} not added to local database; already there.'.format(rank, name))
                     pass
     else:
-        result_list.append('Taxon name not resolved.')
-        result_list.append('Here is what was returned:')
-        result_list.append('')
-        result_list.append(res) # let the user see what was returned
-    return render(request, "results.html", {'result_list': result_list})
+        stdlogger.info('Taxon name "{}" not resolved.'.format(taxon))
+        stdlogger.info('Here is what was returned:')
+        stdlogger.info('')
+        stdlogger.info(res) # let the user see what was returned
+    return([])
+
+
+def add_taxon(request):
+    stdlogger.debug("Entering add_taxon")
+
+    taxon = request.POST['taxon']
+    result_list = doit(taxon)
+    return render(request, "results.html")
 
 def add_taxon_form(request):
     return render(request, "taxonform.html")

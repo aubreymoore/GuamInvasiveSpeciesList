@@ -131,3 +131,44 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 MPTT_ADMIN_LEVEL_INDENT = 20
+
+# Logging reference: https://ian.pizza/b/2013/04/16/getting-started-with-django-logging-in-5-minutes/
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'verbose': {
+            'format' : "[%(asctime)s] %(levelname)s [%(name)s:%(lineno)s] %(message)s",
+            'datefmt' : "%d/%b/%Y %H:%M:%S"
+        },
+        'simple': {
+            'format': '%(levelname)s %(message)s'
+        },
+    },
+    'handlers': {
+        'file1': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': 'mysite.log',
+            'formatter': 'verbose'
+        },
+        'file2': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': 'taxonomy.log',
+            'formatter': 'verbose'
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers':['file1'],
+            'propagate': True,
+            'level':'DEBUG',
+        },
+        'taxonomy': {
+            'handlers': ['file2'],
+            'level': 'DEBUG',
+        },
+    }
+}
