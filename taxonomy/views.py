@@ -2,7 +2,7 @@ from django.shortcuts import render
 
 from django.template import RequestContext
 
-from taxonomy.models import Taxon
+from taxonomy.models import Taxon, DwcaTaxon
 #from taxon_names_resolver import Resolver
 from django.core.exceptions import ObjectDoesNotExist
 from django.db import IntegrityError
@@ -14,6 +14,10 @@ from django.core.exceptions import ObjectDoesNotExist
 from django.core.exceptions import MultipleObjectsReturned
 import requests
 import logging
+from django.http import HttpResponse
+from .dwca_processor import dwca_to_db
+#from django.contrib.auth.decorators import user_passes_test
+import time
 
 stdlogger = logging.getLogger(__name__)
 
@@ -24,7 +28,47 @@ def myotherfunction():
     stdlogger.error("this is an error message!!")
 
 
+def find_names(modeladmin, request, queryset):
+    pass
 
+
+def eureka(request):
+
+    # Admin actions:
+    # https://docs.djangoproject.com/en/1.10/ref/contrib/admin/actions/
+
+    # html = """
+    # <html>
+    #     <body>Eureka2</body>
+    # </html>
+    # """
+    # url = 'http://gnrd.globalnames.org/name_finder.json?'
+    # params = {'url': 'https://aubreymoore.github.io/crop-pest-list/list.html'}
+    # r = requests.get(url, params)
+    # rj = r.json()
+    # token_url = rj['token_url']
+    # print(token_url)
+    # i = 0
+    # while i <= 100:
+    #     time.sleep(1)
+    #     r = requests.get(token_url)
+    #     rj = r.json()
+    #     status = rj['status']
+    #     print(i, statusj)
+    return render(request, "eureka.html")
+
+
+def empty_dwca_tables(request):
+    # If we delete all records from DwcaTaxon, all associated records in the other 3 DwCA
+    # tables should disappear because the "on_delete=models.CASCADE" is set.
+    DwcaTaxon.objects.all().delete()
+    return HttpResponse('All records have been deleted from DwCA database tables.')
+
+def add_dwca_to_db(request):
+    if not request.user.is_authenticated:
+         return HttpResponse('Sorry, you must be logged in to access this page.')
+    dwca_to_db()
+    return HttpResponse('Data from the Darwin Core Archive have been stored in the database.')
 
 def show_taxa(request):
     nodes = None
@@ -121,6 +165,25 @@ def doit(taxon):
         stdlogger.info('')
         stdlogger.info(res) # let the user see what was returned
     return([])
+
+#@user_passes_test(lambda u: u.is_staff)
+def resolve_names_in_dwca(request):
+    if not request.user.is_authenticated:
+         return HttpResponse('Sorry, you must be logged in to access this page.')
+    taxa = DwcaTaxon.objects.values_list('scientificName', flat=True)
+    for taxon in taxa:
+        doit(taxon)
+    html = '''
+    <html>
+        <body>
+            Finished resolving scientific names in the Darwin Core Archive.
+        </body>
+    </html>
+    '''
+    return HttpResponse(html)
+
+
+
 
 
 def add_taxon(request):

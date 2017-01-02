@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<archive xmlns="http://rs.tdwg.org/dwc/text/">
+	<core encoding="UTF-8" linesTerminatedBy="\n" fieldsTerminatedBy="," fieldsEnclosedBy="" ignoreHeaderLines="1" rowType="http://rs.tdwg.org/dwc/terms/Taxon">
+		<files>
+			<location>dwcaTaxon.csv</location>
+		</files>
+		<id index="0"/>
+		<field index="1" term="http://rs.tdwg.org/dwc/terms/scientificName"/>
+		<field index="2" term="http://rs.tdwg.org/dwc/terms/taxonRank"/>
+		<field index="3" term="http://rs.tdwg.org/dwc/terms/kingdom"/>
+		<field default="Moore2016" term="http://purl.org/dc/terms/bibliographicCitation"/>
+	</core>
+	<extension encoding="UTF-8" linesTerminatedBy="\n" fieldsTerminatedBy="," fieldsEnclosedBy="" ignoreHeaderLines="1" rowType="http://rs.gbif.org/terms/1.0/Distribution">
+		<files>
+			<location>dwcaDistribution.csv</location>
+		</files>
+		<coreid index="0"/>
+		<field index="1" term="http://rs.tdwg.org/dwc/terms/locality"/>
+		<field index="2" term="http://rs.tdwg.org/dwc/terms/occurrenceRemarks"/>
+	</extension>
+	<extension encoding="UTF-8" linesTerminatedBy="\n" fieldsTerminatedBy="," fieldsEnclosedBy="" ignoreHeaderLines="1" rowType="http://rs.gbif.org/terms/1.0/VernacularName">
+		<files>
+			<location>dwcaVernacular.csv</location>
+		</files>
+		<coreid index="0"/>
+		<field index="1" term="http://rs.tdwg.org/dwc/terms/vernacularName"/>
+	</extension>
+	<extension encoding="UTF-8" linesTerminatedBy="\n" fieldsTerminatedBy="," fieldsEnclosedBy="" ignoreHeaderLines="1" rowType="http://rs.tdwg.org/dwc/terms/ResourceRelationship">
+		<files>
+			<location>dwcaResourceRelationship.csv</location>
+		</files>
+		<coreid index="0"/>
+		<field index="1" term="http://rs.tdwg.org/dwc/terms/relationshipOfResource"/>
+		<field index="2" term="http://rs.tdwg.org/dwc/terms/relatedResourceID"/>
+	</extension>
+</archive>

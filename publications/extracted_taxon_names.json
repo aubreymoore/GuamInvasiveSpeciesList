@@ -1,0 +1,316 @@
+{
+    "engines": ["TaxonFinder"],
+    "token_url": "http://gnrd.globalnames.org/name_finder.json?token=59qfob5vip",
+    "parameters": {
+        "all_data_sources": false,
+        "data_source_ids": [11],
+        "preferred_data_sources": [],
+        "engine": 0,
+        "best_match_only": false,
+        "return_content": false,
+        "detect_language": true
+    },
+    "queue_size": 0,
+    "status": 200,
+    "data_sources": [{
+        "title": "GBIF Backbone Taxonomy",
+        "id": 11
+    }],
+    "file": null,
+    "unique": false,
+    "verbatim": true,
+    "names": [{
+        "size": 7,
+        "offsetStart": 22,
+        "scientificName": "Mantodea",
+        "verbatim": "MANTODEA",
+        "offsetEnd": 29
+    }, {
+        "size": 4,
+        "offsetStart": 54,
+        "scientificName": "Istor",
+        "verbatim": "ISTOR",
+        "offsetEnd": 58
+    }, {
+        "size": 21,
+        "offsetStart": 834,
+        "scientificName": "Tenodera australasiae",
+        "verbatim": "Tenodera australasiae)",
+        "offsetEnd": 855
+    }, {
+        "size": 22,
+        "offsetStart": 936,
+        "scientificName": "Orthodera burmeisteri",
+        "verbatim": "(Orthodera burmeisteri)",
+        "offsetEnd": 958
+    }, {
+        "size": 17,
+        "offsetStart": 981,
+        "scientificName": "Statilia pallida",
+        "verbatim": "(Statilia pallida)",
+        "offsetEnd": 998
+    }, {
+        "size": 28,
+        "offsetStart": 1026,
+        "scientificName": "Tenodera aridifolia sinensis",
+        "verbatim": "Tenodera aridifolia sinensis)",
+        "offsetEnd": 1054
+    }, {
+        "size": 10,
+        "offsetStart": 1083,
+        "scientificName": "Acromantis",
+        "verbatim": "(Acromantis",
+        "offsetEnd": 1093
+    }, {
+        "size": 20,
+        "offsetStart": 1511,
+        "scientificName": "Orthodera burmeisteri",
+        "verbatim": "Orthodera burmeisteri",
+        "offsetEnd": 1531
+    }, {
+        "size": 20,
+        "offsetStart": 1695,
+        "scientificName": "Orthodera burmeisteri",
+        "verbatim": "Orthodera burmeisteri",
+        "offsetEnd": 1715
+    }, {
+        "size": 20,
+        "offsetStart": 1731,
+        "scientificName": "Orthodera burmeisteri",
+        "verbatim": "Orthodera burmeisteri",
+        "offsetEnd": 1751
+    }, {
+        "size": 6,
+        "offsetStart": 1990,
+        "scientificName": "Anga ur",
+        "verbatim": "Anga ur",
+        "offsetEnd": 1996
+    }, {
+        "size": 18,
+        "offsetStart": 2163,
+        "scientificName": "Acromantis palauana",
+        "verbatim": "Acromantis palauana",
+        "offsetEnd": 2181
+    }, {
+        "size": 15,
+        "offsetStart": 2221,
+        "scientificName": "Statilia pallida",
+        "verbatim": "Statilia pallida",
+        "offsetEnd": 2236
+    }, {
+        "size": 15,
+        "offsetStart": 2246,
+        "scientificName": "Statilia pallida",
+        "verbatim": "Statilia pallida",
+        "offsetEnd": 2261
+    }, {
+        "size": 27,
+        "offsetStart": 2409,
+        "scientificName": "Tenodera aridifolia sinensis",
+        "verbatim": "Tenodera aridifolia sinensis",
+        "offsetEnd": 2436
+    }, {
+        "size": 20,
+        "offsetStart": 2754,
+        "scientificName": "Tenodera australasiae",
+        "verbatim": "Tenodera australasiae",
+        "offsetEnd": 2774
+    }, {
+        "size": 20,
+        "offsetStart": 2785,
+        "scientificName": "Tenodera australasiae",
+        "verbatim": "Tenodera australasiae",
+        "offsetEnd": 2805
+    }],
+    "input_url": "http://hbs.bishopmuseum.org/pubs-online/pdf/iom5-2mantodea.pdf",
+    "total": 17,
+    "execution_time": {
+        "names_resolution_duration": 0.16969633102416992,
+        "text_preparation_duration": 0.03478431701660156,
+        "total_duration": 0.5415303707122803,
+        "find_names_duration": 0.3370497226715088
+    },
+    "resolved_names": [{
+        "is_known_name": true,
+        "results": [{
+            "classification_path_ranks": "kingdom|phylum|class|order",
+            "prescore": "1|0|0",
+            "classification_path_ids": "1|54|216|788",
+            "data_source_id": 11,
+            "classification_path": "Animalia|Arthropoda|Insecta|Mantodea",
+            "gni_uuid": "deb1501e-9a0c-537f-99ff-fb0625ca8a87",
+            "name_string": "Mantodea",
+            "canonical_form": "Mantodea",
+            "match_value": "Exact string match",
+            "edit_distance": 0,
+            "imported_at": "2016-11-13T22:33:10Z",
+            "score": 0.75,
+            "taxon_id": "788",
+            "data_source_title": "GBIF Backbone Taxonomy",
+            "match_type": 1
+        }],
+        "supplied_name_string": "Mantodea"
+    }, {
+        "is_known_name": true,
+        "results": [{
+            "current_taxon_id": "1037679",
+            "prescore": "1|0|0",
+            "classification_path_ids": "1|54|216|1470|3792|1037679",
+            "data_source_id": 11,
+            "classification_path": "Animalia|Arthropoda|Insecta|Coleoptera|Carabidae|Omophron",
+            "gni_uuid": "cf7d040c-619a-5457-a3ce-655371d1afe1",
+            "classification_path_ranks": "kingdom|phylum|class|order|family|genus",
+            "name_string": "Istor Semenov, 1922",
+            "canonical_form": "Istor",
+            "match_value": "Exact match by canonical form",
+            "edit_distance": 0,
+            "imported_at": "2016-11-13T21:54:49Z",
+            "score": 0.75,
+            "taxon_id": "4717000",
+            "current_name_string": "Omophron Latreille, 1802",
+            "data_source_title": "GBIF Backbone Taxonomy",
+            "match_type": 2
+        }],
+        "supplied_name_string": "Istor"
+    }, {
+        "is_known_name": true,
+        "results": [{
+            "classification_path_ranks": "kingdom|phylum|class|order|family|genus|species",
+            "prescore": "3|0|0",
+            "classification_path_ids": "1|54|216|788|9383|1405565|1405578",
+            "data_source_id": 11,
+            "classification_path": "Animalia|Arthropoda|Insecta|Mantodea|Mantidae|Tenodera|Tenodera australasiae",
+            "gni_uuid": "55c8ccb2-0baa-5f7b-a9be-48547b2fd70f",
+            "name_string": "Tenodera australasiae Leach, 1814",
+            "canonical_form": "Tenodera australasiae",
+            "match_value": "Exact match by canonical form",
+            "edit_distance": 0,
+            "imported_at": "2016-11-13T20:57:05Z",
+            "score": 0.988,
+            "taxon_id": "1405578",
+            "data_source_title": "GBIF Backbone Taxonomy",
+            "match_type": 2
+        }],
+        "supplied_name_string": "Tenodera australasiae"
+    }, {
+        "is_known_name": true,
+        "results": [{
+            "classification_path_ranks": "kingdom|phylum|class|order|family|genus|species",
+            "prescore": "3|0|0",
+            "classification_path_ids": "1|54|216|788|9383|1405111|1405118",
+            "data_source_id": 11,
+            "classification_path": "Animalia|Arthropoda|Insecta|Mantodea|Mantidae|Orthodera|Orthodera burmeisteri",
+            "gni_uuid": "f85155be-0c3a-5ed8-89e8-7c377f5c1790",
+            "name_string": "Orthodera burmeisteri Wood-Mason, 1889",
+            "canonical_form": "Orthodera burmeisteri",
+            "match_value": "Exact match by canonical form",
+            "edit_distance": 0,
+            "imported_at": "2016-11-13T19:37:51Z",
+            "score": 0.988,
+            "taxon_id": "1405118",
+            "data_source_title": "GBIF Backbone Taxonomy",
+            "match_type": 2
+        }],
+        "supplied_name_string": "Orthodera burmeisteri"
+    }, {
+        "is_known_name": true,
+        "results": [{
+            "classification_path_ranks": "kingdom|phylum|class|order|family|genus|species",
+            "prescore": "3|0|0",
+            "classification_path_ids": "1|54|216|788|9383|1405381|1405382",
+            "data_source_id": 11,
+            "classification_path": "Animalia|Arthropoda|Insecta|Mantodea|Mantidae|Statilia|Statilia pallida",
+            "gni_uuid": "195d319b-23b6-56dd-8a83-9a9153460ae6",
+            "name_string": "Statilia pallida Werner, 1922",
+            "canonical_form": "Statilia pallida",
+            "match_value": "Exact match by canonical form",
+            "edit_distance": 0,
+            "imported_at": "2016-11-13T21:16:44Z",
+            "score": 0.988,
+            "taxon_id": "1405382",
+            "data_source_title": "GBIF Backbone Taxonomy",
+            "match_type": 2
+        }],
+        "supplied_name_string": "Statilia pallida"
+    }, {
+        "is_known_name": false,
+        "results": [{
+            "classification_path_ranks": "kingdom|phylum|class|order|family|genus|species",
+            "prescore": "3|0|0",
+            "classification_path_ids": "1|54|216|788|9383|1405565|1405597",
+            "data_source_id": 11,
+            "classification_path": "Animalia|Arthropoda|Insecta|Mantodea|Mantidae|Tenodera|Tenodera aridifolia",
+            "gni_uuid": "0f813aab-0692-537a-95cf-5c72b0e94fec",
+            "name_string": "Tenodera aridifolia Stoll, 1813",
+            "canonical_form": "Tenodera aridifolia",
+            "match_value": "Partial exact match",
+            "edit_distance": 0,
+            "imported_at": "2016-11-13T20:58:06Z",
+            "score": 0.988,
+            "taxon_id": "1405597",
+            "data_source_title": "GBIF Backbone Taxonomy",
+            "match_type": 4
+        }],
+        "supplied_name_string": "Tenodera aridifolia sinensis"
+    }, {
+        "is_known_name": true,
+        "results": [{
+            "classification_path_ranks": "kingdom|phylum|class|order|family|genus",
+            "prescore": "1|0|0",
+            "classification_path_ids": "1|54|216|788|5919|7962659",
+            "data_source_id": 11,
+            "classification_path": "Animalia|Arthropoda|Insecta|Mantodea|Hymenopodidae|Acromantis",
+            "gni_uuid": "d9d8e286-1c6a-5aa1-83fd-a97122cf1d8f",
+            "name_string": "Acromantis Saussure, 1870",
+            "canonical_form": "Acromantis",
+            "match_value": "Exact match by canonical form",
+            "edit_distance": 0,
+            "imported_at": "2016-11-13T20:30:51Z",
+            "score": 0.75,
+            "taxon_id": "7962659",
+            "data_source_title": "GBIF Backbone Taxonomy",
+            "match_type": 2
+        }],
+        "supplied_name_string": "Acromantis"
+    }, {
+        "is_known_name": false,
+        "results": [{
+            "classification_path_ranks": "kingdom|phylum|genus",
+            "prescore": "1|0|0",
+            "classification_path_ids": "1|43|4878751",
+            "data_source_id": 11,
+            "classification_path": "Animalia|Cnidaria|Anga",
+            "gni_uuid": "15675d8f-2fef-5709-a2cc-3d33a3cd67a3",
+            "name_string": "Anga Stechow, 1921",
+            "canonical_form": "Anga",
+            "match_value": "Could only match genus",
+            "edit_distance": 0,
+            "imported_at": "2016-11-13T22:37:24Z",
+            "score": 0.75,
+            "taxon_id": "4878751",
+            "data_source_title": "GBIF Backbone Taxonomy",
+            "match_type": 6
+        }],
+        "supplied_name_string": "Anga ur"
+    }, {
+        "is_known_name": true,
+        "results": [{
+            "classification_path_ranks": "kingdom|phylum|class|order|family|genus|species",
+            "prescore": "3|0|0",
+            "classification_path_ids": "1|54|216|788|5919|7962659|1406619",
+            "data_source_id": 11,
+            "classification_path": "Animalia|Arthropoda|Insecta|Mantodea|Hymenopodidae|Acromantis|Acromantis palauana",
+            "gni_uuid": "cc976bcd-ff9f-55bf-8a0b-a9400fd1165f",
+            "name_string": "Acromantis palauana Beier, 1972",
+            "canonical_form": "Acromantis palauana",
+            "match_value": "Exact match by canonical form",
+            "edit_distance": 0,
+            "imported_at": "2016-11-13T21:49:29Z",
+            "score": 0.988,
+            "taxon_id": "1406619",
+            "data_source_title": "GBIF Backbone Taxonomy",
+            "match_type": 2
+        }],
+        "supplied_name_string": "Acromantis palauana"
+    }]
+}
