@@ -5,8 +5,9 @@ import uuid
 from publications import models as pub_models
 from django.contrib import admin
 
-
-
+class NameFinderJSON(models.Model):
+    pub = models.ForeignKey(pub_models.Publication)
+    name_finder_json = models.TextField()
 
 class NameFinderResult(models.Model):
     pub = models.ForeignKey(pub_models.Publication)

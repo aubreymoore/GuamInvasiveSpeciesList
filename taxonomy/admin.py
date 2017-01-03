@@ -11,6 +11,7 @@ from .models import DwcaVernacular
 from .models import RawName
 from .models import RawNameAdmin
 from .models import NameFinderResult
+from .models import NameFinderJSON
 #from .models import NameFinderResultAdmin
 
 from django.contrib.admin import AdminSite
@@ -33,6 +34,7 @@ import json
 import time
 from django.core.files.base import ContentFile
 import json
+from taxonomy.functions import json_to_db
 from taxonomy.functions import find_names
 from taxonomy.functions import json_to_name_finder_results
 
@@ -59,6 +61,7 @@ class CustomPublicationAdmin(PublicationAdmin):
                 print('new file attached.')
                 print('adding data to NameFinderResults model ...')
                 json_to_name_finder_results(pub, taxa)
+                json_to_db(pub, taxa)
                 print('FINIS')
             else:
                 print('A file with description "extracted_taxon_names" already exists')
@@ -77,11 +80,15 @@ def mark_as_verified(self, request, queryset):
     queryset.update(verified=True)
 mark_as_verified.short_description = 'Mark selected results as verified'
 
+# http://www.gbif.org/species/1406619
+
+
 class NameFinderResultAdmin(admin.ModelAdmin):
     list_filter = ('pub', 'verified',)
-    list_display = ('verified', 'classification_path',)
+    list_display = ('verified', 'classification_path', 'GBIF')
     list_display_links = ('classification_path',)
     readonly_fields = (
+        'GBIF',
         'pub',
         'is_known_name',
         'supplied_name_string',
@@ -104,6 +111,12 @@ class NameFinderResultAdmin(admin.ModelAdmin):
         'score',)
     actions = [mark_as_verified]
 
+    def GBIF(self, obj):
+        return '<a  target="_blank" href="http://www.gbif.org/species/{}">{}</a>'.format(obj.taxon_id, obj.taxon_id)
+    GBIF.allow_tags = True
+
+
+
 admin.site.register(NameFinderResult, NameFinderResultAdmin)
 
 
@@ -115,6 +128,7 @@ admin.site.register(DwcaDistribution)
 admin.site.register(DwcaResourceRelationship)
 admin.site.register(DwcaVernacular)
 admin.site.register(RawName, RawNameAdmin)
+admin.site.register(NameFinderJSON)
 
 
 

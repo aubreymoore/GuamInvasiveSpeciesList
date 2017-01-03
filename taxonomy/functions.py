@@ -1,6 +1,6 @@
 import requests
 import time
-from taxonomy.models import NameFinderResult
+from taxonomy.models import NameFinderResult, NameFinderJSON
 
 def find_names(doc_url):
     '''
@@ -66,3 +66,9 @@ def json_to_name_finder_results(pub, name_finder_json):
             x.classification_path_ids = r.get('classification_path_ids','')
             x.score = r.get('score','')
         x.save()
+
+def json_to_db(pub, name_finder_json):
+    x = NameFinderJSON()
+    x.pub = pub
+    x.name_finder_json = name_finder_json
+    x.save()
